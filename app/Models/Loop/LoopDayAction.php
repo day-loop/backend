@@ -2,8 +2,10 @@
 
 namespace App\Models\Loop;
 
+use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class LoopDayAction extends Model
@@ -38,4 +40,19 @@ class LoopDayAction extends Model
     protected $casts = [
         //
     ];
+
+    public function loopAction(): BelongsTo
+    {
+        return $this->belongsTo(LoopAction::class);
+    }
+
+    public function loop(): BelongsTo
+    {
+        return $this->belongsTo(Loop::class);
+    }
+
+    public function user(): BelongsTo
+    {
+        return $this->belongsTo(User::class);
+    }
 }

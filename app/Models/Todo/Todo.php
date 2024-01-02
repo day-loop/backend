@@ -2,8 +2,10 @@
 
 namespace App\Models\Todo;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\User;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Todo extends Model
 {
@@ -13,7 +15,8 @@ class Todo extends Model
      * The attributes that are mass assignable
      */
     protected $fillable = [
-        //
+        'todo',
+        'user_id',
     ];
 
     /**
@@ -24,4 +27,9 @@ class Todo extends Model
     protected $casts = [
         //
     ];
+
+    public function user(): BelongsTo
+    {
+        return $this->belongsTo(User::class);
+    }
 }

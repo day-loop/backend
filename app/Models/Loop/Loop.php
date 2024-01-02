@@ -4,6 +4,7 @@ namespace App\Models\Loop;
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Loop extends Model
@@ -37,4 +38,9 @@ class Loop extends Model
     protected $casts = [
         //
     ];
+
+    public function actions(): HasMany
+    {
+        return $this->hasMany(LoopAction::class);
+    }
 }

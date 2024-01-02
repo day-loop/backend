@@ -2,8 +2,10 @@
 
 namespace App\Models\Topic;
 
+use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class TopicDayNote extends Model
@@ -38,4 +40,14 @@ class TopicDayNote extends Model
     protected $casts = [
         //
     ];
+
+    public function topic(): BelongsTo
+    {
+        return $this->belongsTo(Topic::class);
+    }
+
+    public function user(): BelongsTo
+    {
+        return $this->belongsTo(User::class);
+    }
 }
