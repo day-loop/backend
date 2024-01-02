@@ -14,9 +14,11 @@ class Loop extends Model
     {
         parent::boot();
 
-        static::creating(function ($model) {
-            $model->user_id = Auth::id();
-        });
+        if (!app()->runningInConsole()) {
+            static::creating(function ($model) {
+                $model->user_id = Auth::id();
+            });
+        }
     }
 
     /**
