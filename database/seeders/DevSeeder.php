@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use Database\Seeders\Local\Loop;
 use Database\Seeders\Local\User\DefaultUserSeeder;
 use Database\Seeders\Local\User\UserSeeder;
 use Illuminate\Database\Seeder;
@@ -18,6 +19,9 @@ class DevSeeder extends Seeder
         $this->call([
             DefaultUserSeeder::class,
             UserSeeder::class,
+
+            // loop
+            Loop\LoopSeeder::class,
         ]);
     }
 }
