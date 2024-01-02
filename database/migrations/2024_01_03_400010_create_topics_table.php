@@ -19,6 +19,7 @@ return new class extends Migration
             $table->unsignedBigInteger('user_id');
 
             $table->text("name");
+            $table->text("color");
 
             $table->timestamps();
         });
