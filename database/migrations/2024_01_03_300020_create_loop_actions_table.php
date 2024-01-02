@@ -18,7 +18,7 @@ return new class extends Migration
 
             $table->unsignedBigInteger('loop_id');
 
-            $table->string('name');
+            $table->text('name');
 
             $table->timestamps();
         });
