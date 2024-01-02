@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Loop;
+namespace App\Http\Controllers\Api\Loop;
 
 use App\Models\Loop\Loop;
 use App\Http\Controllers\Controller;
