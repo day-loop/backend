@@ -23,6 +23,7 @@ class DevSeeder extends Seeder
             // loop
             Loop\LoopSeeder::class,
             Loop\LoopActionSeeder::class,
+            Loop\LoopDayActionSeeder::class,
         ]);
     }
 }
