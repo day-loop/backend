@@ -17,6 +17,7 @@ class Todo extends Model
     protected $fillable = [
         'todo',
         'user_id',
+        'is_completed',
     ];
 
     /**
@@ -25,7 +26,7 @@ class Todo extends Model
      * @var array
      */
     protected $casts = [
-        //
+        'is_completed' => 'boolean',
     ];
 
     public function user(): BelongsTo

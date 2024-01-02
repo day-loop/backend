@@ -19,6 +19,7 @@ class TodoFactory extends Factory
         return [
             'todo' => $this->faker->sentence(3),
             'user_id' => $this->faker->numberBetween(1, 10),
+            'is_completed' => $this->faker->boolean(50),
         ];
     }
 }

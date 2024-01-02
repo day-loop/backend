@@ -19,6 +19,8 @@ return new class extends Migration
             $table->unsignedBigInteger('user_id');
 
             $table->text("todo");
+            $table->boolean("is_completed")->default(false);
+
 
             $table->timestamps();
         });
