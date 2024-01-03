@@ -1,19 +1,17 @@
 <?php
 
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use \App\Http\Controllers\Api\Todo;
+use \App\Http\Controllers\Api\Loop;
+use \App\Http\Controllers\Api\Topic;
 
-/*
-|--------------------------------------------------------------------------
-| API Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register API routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| is assigned the "api" middleware group. Enjoy building your API!
-|
-*/
-
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
+Route::prefix('')->middleware('auth:sanctum')->group(function () {
+    Route::resources([
+        'todos' => Todo\TodoController::class,
+        'loops' => Loop\LoopController::class,
+        'loop-actions' => Loop\LoopActionController::class,
+        'loop-day-actions' => Loop\LoopDayActionController::class,
+        'topics' => Topic\TopicController::class,
+        'topic-day-notes' => Topic\TopicDayNoteController::class,
+    ]);
 });
